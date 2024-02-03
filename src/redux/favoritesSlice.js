@@ -9,7 +9,9 @@ const initialState = {
 export const favoritesSlice = createSlice({
   name: 'favorites',
   initialState,
-  reducers: {},
+  addToFavorite: (state, { payload }) => state.items.push(payload),
+  delFromFavorite: (state, { payload }) =>
+    (state.items = state.items.filter(car => car.id !== payload.id)),
 });
 
 const favoritesConfig = {
@@ -18,9 +20,6 @@ const favoritesConfig = {
   whitelist: ['items'],
 };
 
-// export const {  } = favoritesSlice.actions;
+export const { addToFavorite, delFromFavorite } = favoritesSlice.actions;
 
-export const favoritesReducer = persistReducer(
-  favoritesConfig,
-  favoritesSlice.reducer
-);
+export const favoritesReducer = persistReducer(favoritesConfig, favoritesSlice.reducer);
