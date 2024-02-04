@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkrent_car_app=self.webpackChunkrent_car_app||[]).push([[395],{7395:function(r,e,n){n.r(e);var a=n(9548),s=n(4420),c=n(3763),t=n(9127),u=n(9333),p=n(184);e.default=function(){var r=(0,s.v9)(c.Tc);return(0,p.jsxs)(p.Fragment,{children:[(0,p.jsx)(u.Z,{}),0===r.length?(0,p.jsx)(t.Z,{}):(0,p.jsx)(a.Z,{cars:r})]})}}}]);
-//# sourceMappingURL=395.e46d0875.chunk.js.map
