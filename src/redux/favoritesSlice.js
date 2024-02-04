@@ -9,9 +9,16 @@ const initialState = {
 export const favoritesSlice = createSlice({
   name: 'favorites',
   initialState,
-  addToFavorite: (state, { payload }) => state.items.push(payload),
-  delFromFavorite: (state, { payload }) =>
-    (state.items = state.items.filter(car => car.id !== payload.id)),
+  reducers: {
+    addToFavorite: (state, { payload }) => {
+      const favoriteCar = payload;
+      state.items.push(favoriteCar);
+    },
+    delFromFavorite: (state, { payload }) => {
+      const favoriteCar = payload;
+      state.items = state.items.filter(car => car.id !== favoriteCar.id);
+    },
+  },
 });
 
 const favoritesConfig = {

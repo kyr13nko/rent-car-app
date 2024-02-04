@@ -1,20 +1,41 @@
-import { Suspense } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
+
+import Loader from 'components/Loader/Loader';
+
+import {
+  Container,
+  Header,
+  Logo,
+  Navigation,
+  StyledLink,
+  MainWrapper,
+  HeaderWrapper,
+} from './Layout.styled';
 
 const Layout = () => {
   return (
     <>
-      <header>
-        <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/catalog">Catalog</NavLink>
-          <NavLink to="/favorites">Favorites</NavLink>
-        </nav>
-      </header>
+      <Header>
+        <Container>
+          <HeaderWrapper>
+            <Logo>Car Rent App</Logo>
+            <Navigation>
+              <StyledLink to="/">Home</StyledLink>
+              <StyledLink to="/catalog">Catalog</StyledLink>
+              <StyledLink to="/favorites">Favorites</StyledLink>
+            </Navigation>
+          </HeaderWrapper>
+        </Container>
+      </Header>
       <main>
-        <Suspense fallback={<div>LOADING...</div>}>
-          <Outlet />
-        </Suspense>
+        <Container>
+          <MainWrapper>
+            <Suspense fallback={<Loader />}>
+              <Outlet />
+            </Suspense>
+          </MainWrapper>
+        </Container>
       </main>
     </>
   );
