@@ -13,7 +13,7 @@ Discover and choose from  selection of available rental cars on the Catalog page
 ![catalog-page](./src/assets/02-catalog.jpg) 
 
 ## Favorites
-Favorites page is a curated repository of selected cars. Effortlessly review and manage your added cars, streamlining the decision-making process. Access your Favorites page to quickly select the desired car for rent.
+Favorites page is a repository of selected cars. Effortlessly review and manage your added cars, streamlining the decision-making process. Access your Favorites page to quickly select the desired car for rent.
 
 ![catalog-page](./src/assets/03-favorites.jpg)
 
