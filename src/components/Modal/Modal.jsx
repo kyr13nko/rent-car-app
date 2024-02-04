@@ -2,6 +2,7 @@ import { createPortal } from 'react-dom';
 import { useEffect } from 'react';
 
 import { conditions } from 'utils/rentalCondition';
+import { prices } from 'utils/price';
 
 import {
   Button,
@@ -23,7 +24,8 @@ import {
 } from './Modal.styled';
 
 import { ReactComponent as SvgCloseIconSvg } from '../../assets/closeIcon.svg';
-import { prices } from 'utils/price';
+
+  const placeholder = 'https://fakeimg.pl/600x400?text=no+image';
 
 const modalRoot = document.getElementById('modal-root');
 
@@ -74,7 +76,7 @@ const Modal = ({ onClose, car }) => {
           <SvgCloseIconSvg />
         </CloseIcon>
 
-        <Image src={img} alt={make} loading="lazy" width="469" height="314" />
+        <Image src={img ? img : placeholder} alt={make} loading="lazy" width="469" height="314" />
 
         <InfoWrap>
           <TitleLine>

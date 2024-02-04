@@ -26,14 +26,6 @@ export const Header = styled.header`
     0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 `;
 
-export const Logo = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 24px;
-  color: #000000;
-`;
-
 export const Navigation = styled.nav`
   display: flex;
   gap: 12px;
@@ -42,7 +34,7 @@ export const Navigation = styled.nav`
 export const StyledLink = styled(NavLink)`
   font-weight: 500;
   text-decoration: none;
-  color: #000000;
+  color: #3470ff;
   border-radius: 12px;
   padding: 8px 16px;
   transition: background-color 0.3s ease;

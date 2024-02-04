@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 
 import { addToFavorite, delFromFavorite } from '../../redux/favoritesSlice';
-import { selectFavorites } from '../../redux/selectors';
+import { selectFavorites } from '../../redux/carsSelectors';
 
 import { ReactComponent as IconAddSvg } from '../../assets/fullHeart.svg';
 import { ReactComponent as IconDelSvg } from '../../assets/emptyHeart.svg';
@@ -38,6 +38,8 @@ const CarCard = ({ car }) => {
     accessories,
   } = car;
 
+  const placeholder = 'https://fakeimg.pl/600x400?text=no+image';
+
   const dispatch = useDispatch();
   const favorites = useSelector(selectFavorites);
   const [showModal, setShowModal] = useState(false);
@@ -58,7 +60,7 @@ const CarCard = ({ car }) => {
     <>
       <CardWrapper>
         <ImageWrap>
-          <Image src={img} width="274px" alt={model} loading="lazy" />
+          <Image src={img ? img : placeholder} width="274px" alt={model} loading="lazy" />
           {isInFavorite ? (
             <FavoriteButton type="button" onClick={handleDelFromFavorite}>
               <IconAddSvg />

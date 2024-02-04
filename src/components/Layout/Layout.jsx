@@ -1,12 +1,13 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
+import CarRentImg from '../../assets/car-rent.png';
 import Loader from 'components/Loader/Loader';
 
 import {
   Container,
   Header,
-  Logo,
   Navigation,
   StyledLink,
   MainWrapper,
@@ -19,7 +20,9 @@ const Layout = () => {
       <Header>
         <Container>
           <HeaderWrapper>
-            <Logo>Car Rent App</Logo>
+            <a href="/rent-car-app">
+              <img src={CarRentImg} width="36" />
+            </a>
             <Navigation>
               <StyledLink to="/">Home</StyledLink>
               <StyledLink to="/catalog">Catalog</StyledLink>

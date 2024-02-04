@@ -1,12 +1,15 @@
 import CarList from 'components/CarList/CarList';
 import { useSelector } from 'react-redux';
-import { selectFavorites } from '../redux/selectors';
+import { selectFavorites } from '../redux/carsSelectors';
+import EmptyFavorites from 'components/EmptyResult/EmptyResult';
+import SearchForm from 'components/SearchForm/SearchForm';
 
 const Favorites = () => {
   const favorites = useSelector(selectFavorites);
   return (
     <>
-      <CarList cars={favorites} />
+      <SearchForm />
+      {favorites.length === 0 ? <EmptyFavorites /> : <CarList cars={favorites} />}
     </>
   );
 };
